@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    padding: 50px 20px 5px 20px;
+}
+
+/* Scroll barr*/
+::-webkit-scrollbar {
+    width: 10px;
+    cursor: grab;
+    background-color: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: rgb(40, 40, 40);
+    cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+/*Nav Bar*/
+header {
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0px 0px 10px 10px;
+    /* border-right: 2px solid rgb(100, 100, 100); */
+    /* border-left: 2px solid rgb(100, 100, 100); */
+    position: fixed;
+    z-index: 10;
+}
+
+header,
+.navBar,
+.navBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBar {
+    width: 400px;
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+.navBtn {
+    margin: auto;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    color: rgb(149, 149, 149);
+    background-color: rgb(13, 13, 13);
+    border-right: 2px solid rgb(100, 100, 100);
+    border-left: 2px solid rgb(100, 100, 100);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* When screen width is less than 400px- */
+@media (max-width: 400px) {
+    .navBar {
+        width: 360px;
+    }
+
+    .navBtn {
+        margin: 5px;
+        width: 80px;
+    }
+}
+
+.navBtn:hover {
+    border: 2px solid white;
+    color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+.navBtn:active {
+    transform: scale(0.7);
+}
+
+
+/* main first impression Profile */
+.profile {
+    height: fit-content;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* profile style-1 */
+.profile img {
+    height: 550px;
+    width: 330px;
+}
+
+.profileIntro {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.profileIntro h1 {
+    color: rgb(141, 141, 141);
+}
+
+.profileIntro h2 {
+    font-size: 16px;
+    color: rgb(129, 129, 129);
+}
+
+
+.connectContainer {
+    margin-top: 15px;
+    margin-bottom: 50px;
+    height: 35px;
+    width: 200px;
+}
+
+.connectContainer,
+.connectBttnCont,
+.connectBttn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connectBttnCont {
+    margin: 3px;
+    height: 35px;
+    width: 35px;
+}
+
+.connectBttn {
+    height: 32px;
+    width: 32px;
+    color: rgb(120, 120, 120);
+    border: 2px solid rgb(120, 120, 120);
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.connectBttn:hover {
+    height: 35px;
+    width: 35px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-size: 1.5rem;
+}
+
+.connectBttn:active {
+    height: 32px;
+    width: 32px;
+    font-size: 1.1rem;
+}
+
+
+
+/* main Sections common style */
+.mainSection {
+    margin-top: 15px;
+    min-height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px 15px 10px 15px;
+    background-color: rgb(13, 13, 13);
+}
+
+.sectionHeading {
+    height: 40px;
+    margin-left: 10px;
+    font-size: 26px;
+    color: rgb(147, 147, 147);
+    text-align: center;
+}
+
+.sectionContent {
+    padding: 10px 15px 10px 15px;
+    min-height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    color: rgb(99, 99, 99);
+    background-color: rgb(17, 17, 17);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* about me section */
+
+/* skills and projects section wrap property */
+.cardsCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* cards style 3d effect*/
+.card {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+
+.face {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.front {
+    transform: translateZ(75px);
+    color: rgb(95, 95, 95);
+    background-color: rgb(42, 42, 42);
+}
+
+.down {
+    transform: translateY(75px) rotateX(-90deg);
+    color: rgb(150, 150, 150);
+    background-color: rgb(63, 63, 63);
+}
+
+.card:hover {
+    transform: rotateX(80deg);
+}
+
+.card:hover .front {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card:hover .down {
+    border-radius: 0px 0px 10px 10px;
+}
+
+/* When screen width is less than 440px- */
+@media (max-width: 440px) {
+    .card {
+        height: 120px;
+        width: 120px;
+    }
+
+    .front {
+        transform: translateZ(60px);
+    }
+
+    .down {
+        transform: translateY(60px) rotateX(-90deg);
+    }
+
+}
+
+/* When screen width is less than 380px- */
+@media (max-width: 380px) {
+    .card {
+        height: 110px;
+        width: 110px;
+    }
+
+    .front {
+        transform: translateZ(55px);
+    }
+
+    .down {
+        transform: translateY(55px) rotateX(-90deg);
+    }
+
+}
+
+
+/* skill section */
+.cardsCont i {
+    font-size: 80px;
+}
+
+/* projects section */
+
+/* why me Section */
+
+/* footer section */
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 300px;
+}
+
+.footerSection {
+    padding: 10px 15px 10px 15px;
+    width: 50%;
+    min-width: 300px;
+    border-radius: 10px;
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 270px;
+}
+
+/* When screen width is less than 670px- */
+@media (max-width: 670px) {
+    .footer {
+        padding: 30px 5px 10px 5px;
+    }
+
+    .footerSection {
+        padding: 10px 5px 10px 5px;
+
+    }
+
+    /* When screen width is less than 650px- */
+}
+
+@media (max-width: 650px) {
+    .footer {
+        width: 100%;
+        border-radius: 10px;
+        padding: 30px 15px 10px 15px;
+    }
+
+    .footerSection {
+        padding: 10px 15px 10px 15px;
+        width: 100%;
+        min-width: 300px;
+
+    }
+
+}
+
+/* note section */
+.fCC {
+    width: 100%;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.noteBtn {
+    display: inline;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    height: 25px;
+    width: 90px;
+    border-top: none;
+    border-bottom: none;
+}
+
+/* feedback section */
+
+.feederBox {
+    height: 30px;
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: rgb(99, 99, 99);
+    background-color: rgb(20, 20, 20);
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(100, 100, 100);
+}
+
+.feedmsg {
+    height: auto;
+}
+
+.submitBtn {
+    margin-top: 10px;
+    height: 35;
+    border-top: none;
+    border-bottom: none;
+    font-size: 16px;
+}
+
+/* Bottom line */
+.bottomLine {
+    margin-top: 15px;
+    height: 30px;
+    width: 100%;
+    color: rgb(99, 99, 99);
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border-left: 2px solid rgb(99, 99, 99);
+    border-right: 2px solid rgb(99, 99, 99);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
